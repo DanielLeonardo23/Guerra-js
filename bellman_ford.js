@@ -1,10 +1,10 @@
 function createEdgesInputs() {
-    const numVertices = parseInt(document.getElementById('num-vertices').value);
+    const numAristas = parseInt(document.getElementById('num-aristas').value);
     const container = document.getElementById('edges-container');
     container.innerHTML = '';
 
-    if (!isNaN(numVertices) && numVertices > 0) {
-        for (let i = 0; i < numVertices; i++) {
+    if (!isNaN(numAristas) && numAristas > 0) {
+        for (let i = 0; i < numAristas; i++) {
             const row = document.createElement('div');
             row.className = 'edge-row';
             row.innerHTML = `

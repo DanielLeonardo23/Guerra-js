@@ -12,7 +12,8 @@ function createMatrixInputs() {
             for (let j = 0; j < size; j++) {
                 const input = document.createElement('input');
                 input.type = 'number';
-                input.placeholder = '0';
+                input.placeholder = 'Inf';
+                input.value = 999999;
                 row.appendChild(input);
             }
             container.appendChild(row);

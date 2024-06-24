@@ -92,7 +92,7 @@ button:hover {
 }
 
 .matrix-row input {
-    width: 50px;
+    width: 100px;
     margin-right: 5px;
     text-align: center;
 }

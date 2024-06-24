@@ -84,7 +84,7 @@ button:hover {
     background-color: #c82333;
 }
 
-/* Nuevos estilos para la matriz */
+/* la matriz */
 .matrix-row {
     display: flex;
     justify-content: center;
@@ -98,5 +98,22 @@ button:hover {
 }
 
 .matrix-row input:last-child {
+    margin-right: 0;
+}
+
+/* aristas */
+.edge-row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.edge-row input {
+    width: 100px;
+    margin-right: 5px;
+    text-align: center;
+}
+
+.edge-row input:last-child {
     margin-right: 0;
 }

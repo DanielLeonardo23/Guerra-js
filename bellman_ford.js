@@ -1,10 +1,10 @@
 function createEdgesInputs() {
-    const numVertices = parseInt(document.getElementById('num-vertices').value);
+    const numEdges = parseInt(document.getElementById('num-edges').value);
     const container = document.getElementById('edges-container');
     container.innerHTML = '';
 
-    if (!isNaN(numVertices) && numVertices > 0) {
-        for (let i = 0; i < numVertices; i++) {
+    if (!isNaN(numEdges) && numEdges > 0) {
+        for (let i = 0; i < numEdges; i++) {
             const row = document.createElement('div');
             row.className = 'edge-row';
             row.innerHTML = `
@@ -19,7 +19,7 @@ function createEdgesInputs() {
 
 function getEdgesInput() {
     const rows = document.querySelectorAll('.edge-row');
-    const edges = {};
+    const edges = [];
 
     rows.forEach(row => {
         const inputs = row.querySelectorAll('input');
@@ -28,21 +28,21 @@ function getEdgesInput() {
         const weight = parseInt(inputs[2].value);
 
         if (!isNaN(u) && !isNaN(v) && !isNaN(weight)) {
-            edges[`${u},${v}`] = weight;
+            edges.push({ u, v, weight });
         }
     });
 
     return edges;
 }
 
-function relax(u, v, w, d, p) {
-    if (d[v] > d[u] + w[[u, v]]) {
-        d[v] = d[u] + w[[u, v]];
+function relax(u, v, weight, d, p) {
+    if (d[v] > d[u] + weight) {
+        d[v] = d[u] + weight;
         p[v] = u;
     }
 }
 
-function bellmanFord(w, n, s) {
+function bellmanFord(edges, n, s) {
     const inf = Number.MAX_SAFE_INTEGER;
     const d = Array(n).fill(inf);
     const p = Array(n).fill(null);
@@ -50,15 +50,13 @@ function bellmanFord(w, n, s) {
     d[s] = 0;
 
     for (let i = 0; i < n - 1; i++) {
-        for (const [uv, weight] of Object.entries(w)) {
-            const [u, v] = uv.split(',').map(Number);
-            relax(u, v, w, d, p);
+        for (const { u, v, weight } of edges) {
+            relax(u, v, weight, d, p);
         }
     }
 
-    for (const [uv, weight] of Object.entries(w)) {
-        const [u, v] = uv.split(',').map(Number);
-        if (d[v] > d[u] + w[uv]) {
+    for (const { u, v, weight } of edges) {
+        if (d[v] > d[u] + weight) {
             return false;
         }
     }

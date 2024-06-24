@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algoritmo de Floyd-Warshall</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Algoritmo de Floyd-Warshall</h1>
+        <label for="matrix-size">Tamaño de la matriz:</label>
+        <input type="number" id="matrix-size" placeholder="Ingrese el tamaño" oninput="createMatrixInputs()">
+        
+        <div id="matrix-container">
+            <h2>Matriz de Adyacencia</h2>
+        </div>
+        
+        <button onclick="calculateFloydWarshall()">Calcular</button>
+        <pre id="output"></pre>
+    </div>
+    <script src="floyd_warshall.js"></script>
+</body>
+</html>

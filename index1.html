@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algoritmo de la moneda</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Algoritmo de la moneda</h1>
+        <label for="total">Cambio Total (en Soles):</label>
+        <input type="number" id="total" step="0.01" placeholder="Ingrese la cantidad">
+        
+        <label for="coin-types">Número de tipos de monedas:</label>
+        <input type="number" id="coin-types" placeholder="Ingrese el número de tipos" oninput="createDenominationInputs()">
+        
+        <div id="denominations-container">
+            <h2>Denominaciones y Cuentas</h2>
+        </div>
+        
+        <button onclick="calculateChange()">Calcular</button>
+        <div id="result">
+            <p id="min-coins"></p>
+            <p id="coin-usage"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

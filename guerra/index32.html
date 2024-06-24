@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algoritmo de Bellman-Ford</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Algoritmo de Bellman-Ford</h1>
+        <label for="num-vertices">Número de vértices:</label>
+        <input type="number" id="num-vertices" placeholder="Ingrese el número de vértices" oninput="createEdgesInputs()">
+        
+        <div id="edges-container">
+            <h2>Aristas y Pesos</h2>
+        </div>
+        
+        <button onclick="calculateBellmanFord()">Calcular</button>
+        <pre id="output"></pre>
+    </div>
+    <script src="bellman_ford.js"></script>
+</body>
+</html>

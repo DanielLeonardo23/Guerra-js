@@ -3,7 +3,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
@@ -92,7 +91,7 @@ button:hover {
 }
 
 .matrix-row input {
-    width: 100px;
+    width: 80px;
     margin-right: 5px;
     text-align: center;
 }

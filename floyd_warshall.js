@@ -13,7 +13,7 @@ function createMatrixInputs() {
                 const input = document.createElement('input');
                 input.type = 'number';
                 input.placeholder = 'Inf';
-                input.value = 999999;
+                input.value = 9999;
                 row.appendChild(input);
             }
             container.appendChild(row);

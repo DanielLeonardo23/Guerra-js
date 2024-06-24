@@ -25,18 +25,19 @@
             background-color: var(--bg-color);
             color: var(--text-color);
             font-family: 'Roboto', sans-serif;
+            transform: scale(0.90); /* Escala el contenido al 95% */
         }
         .container {
             display: flex;
             flex-direction: column;
-            justify-content: center; /* Adjusted for vertical centering */
+            justify-content: center; /* Ajustado para centrar verticalmente */
             align-items: center;
             width: 100%;
             max-width: 1000px;
             padding: 20px;
             box-sizing: border-box;
         }
-        h1{
+        h1 {
             font-size: 4rem;
             color: #1908b4;
             margin-bottom: 1rem;
@@ -44,16 +45,16 @@
             animation: fadeIn 3s ease-in-out;
         }
         .image-container {
-            width: 40%; /* Full width for proper centering */
-            display: flex; /* Flexbox for easier alignment */
-            justify-content: center; /* Center horizontally */
-            align-items: center; /* Center vertically */
+            width: 100%; /* Ancho completo para centrar correctamente */
+            display: flex; /* Flexbox para alineación más fácil */
+            justify-content: center; /* Centrar horizontalmente */
+            align-items: center; /* Centrar verticalmente */
             margin: 20px 0;
         }
         .image-container img {
-            max-width: 80%;  /* Limiting width to maintain aspect ratio */
-            max-height: 300px; /* Manageable height */
-            height: auto; /* Maintain aspect ratio */
+            max-width: 80%;  /* Limitar el ancho para mantener la relación de aspecto */
+            max-height: 300px; /* Altura manejable */
+            height: auto; /* Mantener la relación de aspecto */
         }
         .buttons {
             width: 100%;

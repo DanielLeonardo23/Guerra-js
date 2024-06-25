@@ -30,7 +30,7 @@
         .container {
             display: flex;
             flex-direction: column;
-            justify-content: center; /* Ajustado para centrar verticalmente */
+            justify-content: center;
             align-items: center;
             width: 100%;
             max-width: 1000px;
@@ -45,16 +45,16 @@
             animation: fadeIn 3s ease-in-out;
         }
         .image-container {
-            width: 100%; /* Ancho completo para centrar correctamente */
-            display: flex; /* Flexbox para alineación más fácil */
-            justify-content: center; /* Centrar horizontalmente */
-            align-items: center; /* Centrar verticalmente */
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             margin: 20px 0;
         }
         .image-container img {
-            max-width: 80%;  /* Limitar el ancho para mantener la relación de aspecto */
-            max-height: 300px; /* Altura manejable */
-            height: auto; /* Mantener la relación de aspecto */
+            max-width: 80%;
+            max-height: 300px;
+            height: auto;
         }
         .buttons {
             width: 100%;
@@ -62,6 +62,7 @@
             flex-direction: row;
             justify-content: space-around;
             align-items: center;
+            flex-wrap: wrap; /* Para que los botones se ajusten en varias filas en dispositivos móviles */
         }
         button {
             background-color: var(--accent-color);
@@ -77,6 +78,7 @@
             justify-content: center;
             margin: 10px;
             flex-grow: 1;
+            min-width: 200px; /* Asegura un tamaño mínimo en móviles */
             animation: pulse 2s infinite alternate;
         }
         button:hover {
@@ -95,6 +97,25 @@
         @keyframes pulse {
             0% { transform: scale(1); }
             100% { transform: scale(1.1); }
+        }
+        @media (max-width: 768px) {
+            html, body {
+                transform: scale(1); /* Restaura el tamaño normal en móviles */
+            }
+            h1 {
+                font-size: 2.5rem; /* Ajusta el tamaño del texto en móviles */
+            }
+            .image-container img {
+                max-width: 100%; /* Ancho completo en móviles */
+                max-height: 200px; /* Ajusta la altura para móviles */
+            }
+            button {
+                font-size: 1rem; /* Ajusta el tamaño del texto en los botones para móviles */
+                padding: 10px 20px; /* Reduce el padding en móviles */
+            }
+            .icon {
+                font-size: 1.5rem; /* Ajusta el tamaño del ícono en móviles */
+            }
         }
     </style>
 </head>
